@@ -1,2 +1,3 @@
 # Product_cart_counter
-React_app allows to add or remove carts when added to cart or removed from it
+React_js E com app..
+Includes Prouct card, header,subheader,wishlist,log in page
