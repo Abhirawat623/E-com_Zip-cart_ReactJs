@@ -1,6 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartLists from "./CartLists";
+import axios from "axios";
 const Carts =()=>{
+
+useEffect(()=>{
+
+  //for fetching
+  // fetch('https://react-ecom-a4977-default-rtdb.firebaseio.com/items.json').
+  // then(response=>response.json()).    //to fulfill the 
+  // then(data=>console.log(data)).
+  // catch(err=>console.log(err))
+
+  //for axios
+  axios.get('https://react-ecom-a4977-default-rtdb.firebaseio.com/items.json').
+  then(response=>console.log(response)). //not in curly braces console.lo response here
+  catch(err=>console.log(err));
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const [items,setItems] = useState(
 [
