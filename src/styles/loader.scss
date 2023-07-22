@@ -1,0 +1,40 @@
+
+
+.loader-main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+
+.loader {
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: fixed;
+    top:22rem;
+    color:black;
+    text-indent: -9999em;
+    animation: mulShdSpin 1.1s infinite ease;
+    transform: translateZ(0);
+  }
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 5px dotted black;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1000ms linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 

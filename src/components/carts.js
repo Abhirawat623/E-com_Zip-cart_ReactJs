@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import CartLists from "./CartLists";
 import axios from "axios";
+import  Loader from "../ui/Loader";
+
 const Carts =()=>{
 
-  
-const [items,setItems] = useState([]);
 
+const [items,setItems] = useState([]);
+const [loader,setLoader]=useState(true);
 useEffect(()=>{
 
   //for fetching
@@ -27,11 +29,16 @@ useEffect(()=>{
     const response = await axios.get('https://react-ecom-a4977-default-rtdb.firebaseio.com/items.json');
     const data = response.data;
     setItems(data);
+    setLoader(false)
 
   }
   catch(error){
     console.log("errror", error);
     alert("Some error occured")
+    setLoader(false);
+  }
+  finally{
+    setLoader(false);
   }
  }
 
@@ -39,11 +46,6 @@ useEffect(()=>{
  fetchingData();
 },[]
 )
-
-
-
-
-
 
 // [
 // { id:1,
@@ -84,8 +86,10 @@ useEffect(()=>{
 {items.map(item=>{
   return (<CartLists key={item.id} data={item}/>)})
 }
+</div>
 
-</div></div>
+{loader && <Loader/>}
+</div>
 
     )
 }
