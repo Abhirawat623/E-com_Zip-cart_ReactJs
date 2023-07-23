@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import Modal from "./Modal";
 
 const CartLists =({data})=>{
 
@@ -15,11 +16,17 @@ const CartLists =({data})=>{
      const increaseCounterByOne =()=>{
         setCounter(counter+1)
      }
-      
+ 
+     const [modal,setModal]=useState(false);
 
+     const handleModal=()=>{
+      setModal(modalvalue=>!modalvalue);
+     }
 
 return(
-        <div className={"card-container"}>
+<Fragment>
+        <div onClick={handleModal} className={"card-container"}>
+        
         <img className={"image"} src={"/imagelogos/"+data.thumbnail} alt="product name" width="200px" height="200px"/>
         {/* //can use literal also `/imaelogos/${data.thmbnail} */}
 
@@ -44,11 +51,15 @@ return(
         <span>{counter}</span>
         <button className="counter" onClick={increaseCounterByOne}>+</button>
         </div>}
-
+        
+       
   
     
-    </div></div>
- 
+    </div>
+  
+    </div>
+    {modal && < Modal onClose={handleModal}/>}
+    </Fragment>
 
 )
 }

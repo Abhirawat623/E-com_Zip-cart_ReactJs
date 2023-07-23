@@ -1,0 +1,22 @@
+.modal-container {
+    height: 50%;
+    width:40%;
+    background-color: rgb(39, 39, 39);
+    color: rgb(14, 13, 13);
+    position: fixed;
+    top:8rem;
+    left:26.5rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    
+}
+
+.close-btn{
+    position: absolute;
+    right:3px;
+    top:2px;
+    width: 15%;
+    background-color: red;
+color:white;
+
+}
