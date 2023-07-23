@@ -1,13 +1,26 @@
 import ReactDom from 'react-dom';
 
+export const BackClick=(props)=>{
+
+const handleLayer=()=>{
+    if(props.onClose){
+        props.onClose();
+    }}
+
+return(
+    <div onClick={handleLayer} className="layout"></div>
+)
+}
+
 const Loader = ()=>{
 
 
     return(
     ReactDom.createPortal(<>
-    <div className="loader-main">
+    <breakDrop />
+   
 <div className="loader"></div>
-</div>
+
 </>,
 document.getElementById("loader-root"))
     )

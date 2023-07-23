@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import Modal from "./Modal";
+import Modal from "../ui/Modal";
 
 const CartLists =({data})=>{
 
