@@ -29,7 +29,7 @@ useEffect(()=>{
     const response = await axios.get('https://react-ecom-a4977-default-rtdb.firebaseio.com/items.json');
     const data = response.data;
     setItems(data);
-    setLoader(false)
+    setLoader(false);
 
   }
   catch(error){

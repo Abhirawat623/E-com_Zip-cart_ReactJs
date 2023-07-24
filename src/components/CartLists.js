@@ -7,13 +7,15 @@ const CartLists =({data})=>{
   
      const [ counter ,setCounter ] =useState(0);
 
-     const decreaseCounterByOne = ()=>{
+     const decreaseCounterByOne = (event)=>{
+        event.stopPropagation();
         if(counter===0){return}
         
         setCounter(counter-1);
      }
 
-     const increaseCounterByOne =()=>{
+     const increaseCounterByOne =(event)=>{
+        event.stopPropagation();
         setCounter(counter+1)
      }
  
@@ -60,9 +62,10 @@ return(
     </div>
     { modal && 
                 <Modal onClose={handleModal}>
+                 
                     <div className="item-card__modal">
                         <div className="img-wrap">
-                            <img className={"img-fluid"} src={`/assets/${data.thumbnail}`} alt={data.title}/>
+                            <img className={"img-fluid"} src={"/imagelogos/"+data.thumbnail} alt={data.title} />
                         </div>
                         <div className="meta">
                             <h3>{data.title}</h3>
@@ -71,22 +74,21 @@ return(
                                 <small>
                                     <strike>₹{data.price}</strike>
                                 </small>
+                            
+                            <p className="item-description">{data.description}</p>
                             </div>
-                            <p>{data.description}</p>
-                            {
-                                counter < 1 ?
-                                <button className={"cart-add card-add__modal"} onClick={increaseCounterByOne}>
-                                    <span>Add to Cart</span>
-                                    <img src="/imagelogos/R.png" alt="Cart Icon"  width="21px" height="21px"/>
-                                </button>
-                                :
-                                <div className="cart-addon card-addon__modal">
-                                    <button onClick={decreaseCounterByOne}><span>-</span></button>
-                                    <span>{counter}</span>
-                                    <button onClick={increaseCounterByOne}><span>+</span></button>
-                                </div>
-                            }
-                        </div>
+                            { 
+        counter <1 ? 
+        <button className="add-to-cart-btn" onClick={increaseCounterByOne}>
+        <span>Add To Cart</span>
+        <img src="/imagelogos/R.png" alt="logo" width="15px" height="15px"/></button>
+        :
+        <div className="counter-buttons">
+        <button className="counter" onClick={decreaseCounterByOne}>-</button>
+        <span>{counter}</span>
+        <button className="counter" onClick={increaseCounterByOne}>+</button>
+        </div>}</div>
+                        
                     </div>
                 </Modal> 
     }
