@@ -4,70 +4,79 @@
     "discountedPrice": 200,
     "price":300,
     "title":"Britania, pack of 2",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
 {    "id":2,
     "discountedPrice": 500,
     "price":800,
     "title":"Protein box (500g)",
-    "thumbnail":"product.png"
-  
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   },
   { "id":3,
     "discountedPrice": 1500,
     "price":1700,
     "title":"Basmati Rice(5kg)",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
   { "id":4,
     "discountedPrice": 1000,
     "price":1300,
     "title":"Horlicks,pack of 2",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
   { "id":5,
     "discountedPrice": 500,
     "price":700,
     "title":"Colgate,pack of 3",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
   { "id":6,
     "discountedPrice": 300,
     "price":400,
     "title":"Axe Deodrant",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
   { "id":7,
     "discountedPrice": 100,
     "price":200,
     "title":"Magie Family pack",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
   { "id":8,
     "discountedPrice": 500,
     "price":600,
     "title":"Tata Tes,pack of 2",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
   { "id":9,
     "discountedPrice": 900,
     "price":1100,
     "title":"Coffee jar",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   },
   { "id":10,
     "discountedPrice": 2500,
     "price":3000,
     "title":"Chocolate ",
-    "thumbnail":"product.png"
+    "thumbnail":"product.png",
+    "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit Quae temporibus eveniet magni dolorum suscipit mollitia exid fugiat optio ducimus fuga voluptates dolor officia saepe"
   
   }
 ]

@@ -58,7 +58,38 @@ return(
     </div>
   
     </div>
-    {modal && < Modal onClose={handleModal}/>}
+    { modal && 
+                <Modal onClose={handleModal}>
+                    <div className="item-card__modal">
+                        <div className="img-wrap">
+                            <img className={"img-fluid"} src={`/assets/${data.thumbnail}`} alt={data.title}/>
+                        </div>
+                        <div className="meta">
+                            <h3>{data.title}</h3>
+                            <div className={"pricing"}>
+                                <span>₹{data.discountedPrice}</span>
+                                <small>
+                                    <strike>₹{data.price}</strike>
+                                </small>
+                            </div>
+                            <p>{data.description}</p>
+                            {
+                                counter < 1 ?
+                                <button className={"cart-add card-add__modal"} onClick={increaseCounterByOne}>
+                                    <span>Add to Cart</span>
+                                    <img src="/imagelogos/R.png" alt="Cart Icon"  width="21px" height="21px"/>
+                                </button>
+                                :
+                                <div className="cart-addon card-addon__modal">
+                                    <button onClick={decreaseCounterByOne}><span>-</span></button>
+                                    <span>{counter}</span>
+                                    <button onClick={increaseCounterByOne}><span>+</span></button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </Modal> 
+    }
     </Fragment>
 
 )
