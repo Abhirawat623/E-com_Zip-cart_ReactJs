@@ -39,5 +39,18 @@ align-items: center;
     text-decoration: none;
     list-style: none;
 }
+.counter-carts{
+    position: absolute;
+    right:3.6rem;
+    top:31px;
+    border-radius:5px;
+    border:1px solid black;
+    color:white;
+    background-color: rgb(105, 101, 101);
+    height: 30px;
+    width: 32px;
+    text-align: center;
+    padding-bottom: 3px;
+}
 }
 

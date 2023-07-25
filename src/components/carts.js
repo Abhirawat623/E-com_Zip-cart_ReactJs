@@ -3,10 +3,35 @@ import CartLists from "./CartLists";
 import axios from "axios";
 import  Loader from "../ui/Loader";
 
-const Carts =()=>{
+const Carts =({onAddItem, onRemoveItem})=>{
 
 
 const [items,setItems] = useState([]);
+
+
+const handleAddItem= id =>{
+
+  console.log(id);
+
+
+}
+
+const handleRemoveItem= id =>{
+
+console.log(id);
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
 const [loader,setLoader]=useState(true);
 useEffect(()=>{
 
@@ -84,7 +109,7 @@ useEffect(()=>{
 <CartLists data={items[1]}></CartLists> */}
 
 {items.map(item=>{
-  return (<CartLists key={item.id} data={item}/>)})
+  return (<CartLists onAdd={handleAddItem} onRemove={handleRemoveItem} key={item.id} data={item}/>)})
 }
 </div>
 

@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import Modal from "../ui/Modal";
 
-const CartLists =({data})=>{
+const CartLists =({data,onAdd,onRemove})=>{
 
      console.log(data)
   
@@ -9,14 +9,18 @@ const CartLists =({data})=>{
 
      const decreaseCounterByOne = (event)=>{
         event.stopPropagation();
-        if(counter===0){return}
-        
+
+    //     if(counter===0){return}
+    //    if(counter===1){
+    //     onRemove(data.id);
+    //    }
         setCounter(counter-1);
      }
 
      const increaseCounterByOne =(event)=>{
         event.stopPropagation();
         setCounter(counter+1)
+       onAdd(data.id);
      }
  
      const [modal,setModal]=useState(false);

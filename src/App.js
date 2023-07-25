@@ -1,16 +1,27 @@
-
+import { useState } from 'react';
 import Carts from './components/carts';
 import Header from './components/Header';
 import Subheader from './components/Subheader';
 
 import './App.css';
 
-function App() {
+const  App=()=> {
+const [cartItems,setCartItems]=useState(0);
+
+const handleOnAddItem=()=>{
+  setCartItems(cartItems+1);
+}
+
+const handleOnRemoveItem=()=>{
+  setCartItems(cartItems-1);
+}
+
+
   return (
     <div>
-      <Header/>
+      <Header count={cartItems}/>
       <Subheader/>
-    <Carts/>
+    <Carts onAddItem={handleOnAddItem} onRemoveItem={handleOnRemoveItem} />
    </div>
   );
 }
