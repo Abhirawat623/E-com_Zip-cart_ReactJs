@@ -3,33 +3,63 @@ import CartLists from "./CartLists";
 import axios from "axios";
 import  Loader from "../ui/Loader";
 
-const Carts =({onAddItem, onRemoveItem})=>{
+const Carts =({onAddItem, onRemoveItem,eventState})=>{
 
 
 const [items,setItems] = useState([]);
 
+const handleAddItem = id => {
+  let data = [...items]
+  let index = data.findIndex(i => i.id === id)
+  data[index].quantity += 1
 
-const handleAddItem= id =>{
-
-  console.log(id);
-
-
+  setItems([...data])
+  onAddItem(data[index]);
 }
 
-const handleRemoveItem= id =>{
-
-console.log(id);
-
- 
+const handleRemoveItem = id => {
+  let data = [...items]
+  let index = data.findIndex(i => i.id === id)
+  if(data[index].quantity !== 0) {
+      data[index].quantity -= 1
+      setItems([...data])
+      onRemoveItem(data[index])
+  }
 }
 
+// const handleAddItem= id =>{
+// // if( presentItem.indexOf(id)>-1){
+// //   return;
+// // }
+// // setPresentItem([...presentItem,id])
+// //  onAddItem()
+  
+// let data =[...items];
+// let index = data.findIndex(i=>i.id===id);
+// data[index.quantity] +=1;
 
+// setItems([...data]);
+// onAddItem(data[index]);
+// }
 
+// const handleRemoveItem= id =>{
 
-
-
-
-
+//   // if(presentItem.indexOf(id)>-1){
+//   //   let items = [...presentItem];
+//   //   items.slice(presentItem.indexOf(id),1);
+//   //   setPresentItem([...items])}
+//   //   onRemoveItem()
+  
+//   let data = [...items];
+//   let index =data.findIndex(i=>i.id===id);
+//   if(data[index]!==0){
+//     data[index].quantity -=1;
+//     setItems([...data]);
+//     onRemoveItem(data[index]);
+//   }
+  
+//   }
+  
 
 
 const [loader,setLoader]=useState(true);
@@ -53,7 +83,13 @@ useEffect(()=>{
   try{
     const response = await axios.get('https://react-ecom-a4977-default-rtdb.firebaseio.com/items.json');
     const data = response.data;
-    setItems(data);
+    const transformedData= data.map((item,index)=>{
+      return{
+      ...item,
+     quantity:0,
+      id:index}
+    })
+    setItems(transformedData);
     setLoader(false);
 
   }

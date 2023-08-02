@@ -5,21 +5,21 @@ const CartLists =({data,onAdd,onRemove})=>{
 
      console.log(data)
   
-     const [ counter ,setCounter ] =useState(0);
+    //  const [ counter ,setCounter ] =useState(0);
 
      const decreaseCounterByOne = (event)=>{
         event.stopPropagation();
 
     //     if(counter===0){return}
     //    if(counter===1){
-    //     onRemove(data.id);
+        onRemove(data.id);
     //    }
-        setCounter(counter-1);
+        // setCounter(counter-1);
      }
 
      const increaseCounterByOne =(event)=>{
         event.stopPropagation();
-        setCounter(counter+1)
+        // setCounter(counter+1)
        onAdd(data.id);
      }
  
@@ -47,14 +47,14 @@ return(
         <h1 className="product-name">{data.title}</h1>
 
         { 
-        counter <1 ? 
+        data.quantity <1 ? 
         <button className="add-to-cart-btn" onClick={increaseCounterByOne}>
         <span>Add To Cart</span>
         <img src="/imagelogos/R.png" alt="logo" width="15px" height="15px"/></button>
         :
         <div className="counter-buttons">
         <button className="counter" onClick={decreaseCounterByOne}>-</button>
-        <span>{counter}</span>
+        <span>{data.quantity}</span>
         <button className="counter" onClick={increaseCounterByOne}>+</button>
         </div>}
         
@@ -82,14 +82,14 @@ return(
                             <p className="item-description">{data.description}</p>
                             </div>
                             { 
-        counter <1 ? 
+        data.quantity <1 ? 
         <button className="add-to-cart-btn" onClick={increaseCounterByOne}>
         <span>Add To Cart</span>
         <img src="/imagelogos/R.png" alt="logo" width="15px" height="15px"/></button>
         :
         <div className="counter-buttons">
         <button className="counter" onClick={decreaseCounterByOne}>-</button>
-        <span>{counter}</span>
+        <span>{data.quantity}</span>
         <button className="counter" onClick={increaseCounterByOne}>+</button>
         </div>}</div>
                         

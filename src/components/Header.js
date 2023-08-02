@@ -1,6 +1,6 @@
 import { AddToCart } from "../addtocart/addtocart";
 
-const Header=({count})=>{
+const Header=({count,items,onHandleEvent})=>{
 
 return(
 
@@ -9,7 +9,7 @@ return(
     <h1 className="heading-name">Zip Cart</h1></div>
     <div className="searcher"><input type="text" className="header-input" placeholder="Enter Product,Brand,Section"/><img className="search-logo" src="/imagelogos/search.jpg" alt="logo" height={"25px"} width={"30px"}/></div>
     <ul className="nav-items">
-   <AddToCart count={count}/>
+   <AddToCart count={count} items={items} onHandleEvent={onHandleEvent}/>
         <li className="nav-logo"><img className="heading-logo"
          src="/imagelogos/log-in.jpg" alt="logo" height={"45px"} width={"50px"}/></li>
         <li className="nav-logo"><img className="heading-logo"
@@ -20,7 +20,6 @@ return(
     </ul>
 </nav>
 </div>
-
 )
 }
 

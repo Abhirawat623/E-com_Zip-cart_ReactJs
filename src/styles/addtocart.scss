@@ -1,4 +1,5 @@
 .checkout-modal {
+    background-color: white;
     h2 {
         margin-top: 8px;
         margin-bottom: 24px;
@@ -10,14 +11,14 @@
         max-height: 400px;
         min-height: 300px;
         overflow-y: auto;
+        margin-right: 5px;
 
         &-item {
             display: flex;
             flex-direction: row;
 
             .img-wrap {
-                flex-basis: 20%;
-                max-width: 20%;
+              margin-left: 5px;
             }
 
             .information {
@@ -25,20 +26,38 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                font-weight: 500;
+                margin-left: 5px;
 
                 h4 {
                     margin-top: 0px;
                     margin-bottom: 4px;
                     color: black;
-                    font-weight: 500;
+                    font-weight: 700;
+                    font-size: 20px;
                     letter-spacing: 0.02px;
+                    
+                }
+                .pricing{
+                    display: flex;
+                    flex-direction: row;
+                    gap:6px;
+
+
+                }
+                .cart-add on-btn{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    gap: 5px;
                 }
             }
+           
         }
     }
 
     &_footer {
-        border-top: 1px solid rgba(128, 128, 128, 0.288);
+        border-top: 1px solid rgb(0, 0, 0);
         display: flex;
         justify-content: space-between;
 
@@ -46,6 +65,7 @@
             display: flex;
             align-items: center;
             justify-content: flex-end;
+            font-weight: bold;
 
             h4:first-child {
                 margin: 0 16px;
@@ -54,13 +74,16 @@
 
         button {
             align-self: center;
-            background-color: white;
+            height: 100%;
+            
+            background-color: rgb(39, 39, 39);
             color: white;
+           
             border: unset;
             padding: 12px 24px;
             border-radius: 4px;
             cursor: pointer;
-
+            margin-right: 5px;
             &:hover {
                 opacity: 0.85;
             }
@@ -70,6 +93,34 @@
 
 .empty-cart {
     margin: auto;
-    color: gray;
+    color: rgb(0, 0, 0);
     padding: 24px 0 48px;
+}
+
+.order-container {
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    min-height: 350px;
+    
+    &--success {
+        margin: auto;
+        text-align: center;
+
+        img {
+            max-width: 200px;
+        }
+
+        .message {
+            h1 {
+                margin: 0;
+            }
+            h1, span {
+                margin-top: 8px;
+            }
+            span {
+                color:black;
+            }
+        }
+    }
 }

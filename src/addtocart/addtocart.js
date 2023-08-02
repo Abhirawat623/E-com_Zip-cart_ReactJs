@@ -16,15 +16,15 @@ export const AddToCart=({count})=>{
 return(
     <Fragment>
     {/* <button onClick={handleModal}> */}
-    <button className="counter-carts" data-items={count} onClick={handleShowModal}>3</button>
+    <button className="counter-carts"  onClick={handleShowModal}>{count}</button>
     {showModal &&<Modal onClose={handleShowModal}><div className="checkout-modal">
                         <h2>Checkout Modal</h2>
                         <div className="checkout-modal_list">
                             {
                                 count > 0 ?
                                 <div className="checkout-modal_list-item">
-                                    <div className="img-wrap">
-                                        <img src={"/assets/placeholder.png"} className="img-fluid" alt="Placeholder"/>
+                                    <div className="img-wrap"  >
+                                        <img src={"/imagelogos/product.png"} height={"100px"}  className="img-fluid" alt="Placeholder" />
                                     </div>
                                     <div className="information">
                                         <div>
